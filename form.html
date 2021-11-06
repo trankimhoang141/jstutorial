@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./form.css">
+    <title>The expectation form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <form action="#!" id="validation">
+                    <h2>The expectation form</h2>
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name<span class="text-danger">*</span></label>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" class="form-control" id="fullName" name="fullName" onblur="validateFullName()" placeholder="Enter your Full Name">
+                            </div>
+                            <div class="col-6">
+                                <div id="textName"></div>
+                            </div>
+                        </div>
+                    </div>     
+                                       
+                    <div class="form-group">
+                        <label for="email">Email<span class="text-danger">*</span></label>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" class="form-control" id="email" name="email" onblur="validateEmail()" placeholder="Enter your email">
+                            </div>
+                            <div class="col-6">
+                                <div id="textEmail"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>School</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <select class="form-select col-4" id="school">
+                                    <option value="1">University of science and technology</option>
+                                    <option value="2">University of economics</option>
+                                    <option value="3">University of education</option>
+                                    <option value="4" selected>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <div id="textSchool"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="range" id="age" min="15" max="50" value="18" onclick="valueAge()">
+                                <span id="showAge"></span>
+                                
+                            </div>
+                            <div class="col-6">
+                                <div id="textAge"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="row">
+                            <div class="col-2">
+                                <input type="radio" name="gender" id="male">
+                                <label for="maleRadio">Male</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="radio" name="gender" id="female">
+                                <label for="femaleRadio">Female </label>
+                            </div>
+                            <div class="col-2">
+                                <input type="radio" name="gender" id="other">
+                                <label for="otherRadio">Other</label>
+                            </div>                           
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Favorite <span class="text-danger">*</span></label>
+                        <div class="row">
+                            <div class="col-2">
+                                <input type="checkbox" name="favorite">
+                                <label>Game</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" name="favorite">
+                                <label>Swim</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" name="favorite">
+                                <label>Running</label>
+                            </div>                           
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <input type="checkbox" name="favorite">
+                                <label>Chess</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" name="favorite">
+                                <label>Football</label>
+                            </div>
+                            <div class="col-2">
+                                <input type="checkbox" name="favorite">
+                                <label>Other</label>
+                            </div>   
+                            <div class="col-6">
+                                <div id="textFavorite"></div>
+                            </div>                        
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <div class="col-6">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Enter your Address">
+                        </div>
+                    </div>   
+                    
+                    <div class="form-group">
+                        <label>Describe yourself</label>
+                        <div class="col-6">
+                            <textarea rows="2" cols="60" id="describe"></textarea>
+                        </div>
+                    </div> 
+
+                    <div class="form-group">
+                        <label>Tell us your wish<span class="text-danger">*</span></label>
+                        <div class="row">
+                            <div class="col-6">
+                                <textarea rows="2" cols="60" id="yourWish"></textarea>
+                            </div>
+                            <div class="col-6">
+                                <div id="textYourWish"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-4">
+                                <button class="btn btn-success" type="button" onclick="validateForm()" id="registerBtn">Submit</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger" type="button" onclick="resetBtn()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>		
+        </div>
+    </div>
+
+    <script src="./form.js"></script>
+    
+</body>
+</html>
